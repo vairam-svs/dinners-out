@@ -12,11 +12,9 @@ namespace DinnersOut.Models
         {
         }
 
-        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<Class> Classes { get; set; }
         public virtual DbSet<ClassCourse> ClassCourses { get; set; }
         public virtual DbSet<Course> Courses { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
