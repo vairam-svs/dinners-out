@@ -41,6 +41,7 @@ namespace DinnersOut.Controllers
         {
             ViewBag.ClassId = new SelectList(db.Classes, "Id", "Name");
             ViewBag.CourseId = new SelectList(db.Courses, "Id", "Name");
+            ViewBag.LocationId = new SelectList(db.Locations, "Id", "Name");
             return View();
         }
 
@@ -49,7 +50,7 @@ namespace DinnersOut.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ClassId,CourseId,StartDate,EndDate")] ClassCourse classCourse)
+        public ActionResult Create([Bind(Include = "Id,ClassId,CourseId,LocationId,StartDate,EndDate")] ClassCourse classCourse)
         {
             if (ModelState.IsValid)
             {
@@ -60,6 +61,7 @@ namespace DinnersOut.Controllers
 
             ViewBag.ClassId = new SelectList(db.Classes, "Id", "Name", classCourse.ClassId);
             ViewBag.CourseId = new SelectList(db.Courses, "Id", "Name", classCourse.CourseId);
+            ViewBag.LocationId = new SelectList(db.Locations, "Id", "Name");
             return View(classCourse);
         }
 
@@ -77,6 +79,7 @@ namespace DinnersOut.Controllers
             }
             ViewBag.ClassId = new SelectList(db.Classes, "Id", "Name", classCourse.ClassId);
             ViewBag.CourseId = new SelectList(db.Courses, "Id", "Name", classCourse.CourseId);
+            ViewBag.LocationId = new SelectList(db.Locations, "Id", "Name");
             return View(classCourse);
         }
 
@@ -85,7 +88,7 @@ namespace DinnersOut.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,ClassId,CourseId,StartDate,EndDate")] ClassCourse classCourse)
+        public ActionResult Edit([Bind(Include = "Id,ClassId,CourseId,LocationId,StartDate,EndDate")] ClassCourse classCourse)
         {
             if (ModelState.IsValid)
             {
@@ -95,6 +98,7 @@ namespace DinnersOut.Controllers
             }
             ViewBag.ClassId = new SelectList(db.Classes, "Id", "Name", classCourse.ClassId);
             ViewBag.CourseId = new SelectList(db.Courses, "Id", "Name", classCourse.CourseId);
+            ViewBag.LocationId = new SelectList(db.Locations, "Id", "Name");
             return View(classCourse);
         }
 

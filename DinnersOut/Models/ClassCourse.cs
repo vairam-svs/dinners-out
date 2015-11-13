@@ -15,6 +15,8 @@ namespace DinnersOut.Models
 
         public int? CourseId { get; set; }
 
+        public int? LocationId { get; set; }
+
         [Required]//(ErrorMessage = "Start Date is Required")]
         public DateTime? StartDate { get; set; }
 
@@ -23,5 +25,7 @@ namespace DinnersOut.Models
         public virtual Class Class { get; set; }
 
         public virtual Course Course { get; set; }
+
+        public virtual Location Location { get; set; }
     }
 }

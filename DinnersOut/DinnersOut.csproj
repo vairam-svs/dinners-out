@@ -174,6 +174,7 @@
     <Compile Include="Controllers\CourseClassesController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LocationsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -182,12 +183,21 @@
     <Compile Include="Migrations\201511131756282_initialcreate.Designer.cs">
       <DependentUpon>201511131756282_initialcreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511131819126_locationadd.cs" />
+    <Compile Include="Migrations\201511131819126_locationadd.Designer.cs">
+      <DependentUpon>201511131819126_locationadd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511131900337_classfeeadd.cs" />
+    <Compile Include="Migrations\201511131900337_classfeeadd.Designer.cs">
+      <DependentUpon>201511131900337_classfeeadd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Class.cs" />
     <Compile Include="Models\ClassCourse.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Location.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\RepoSeedModel.cs" />
     <Compile Include="Models\User.cs" />
@@ -264,6 +274,11 @@
     <Content Include="Views\CourseClasses\Details.cshtml" />
     <Content Include="Views\CourseClasses\Edit.cshtml" />
     <Content Include="Views\CourseClasses\Index.cshtml" />
+    <Content Include="Views\Locations\Create.cshtml" />
+    <Content Include="Views\Locations\Delete.cshtml" />
+    <Content Include="Views\Locations\Details.cshtml" />
+    <Content Include="Views\Locations\Edit.cshtml" />
+    <Content Include="Views\Locations\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -279,6 +294,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201511131756282_initialcreate.resx">
       <DependentUpon>201511131756282_initialcreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511131819126_locationadd.resx">
+      <DependentUpon>201511131819126_locationadd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511131900337_classfeeadd.resx">
+      <DependentUpon>201511131900337_classfeeadd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

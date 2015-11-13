@@ -6,22 +6,22 @@ namespace DinnersOut.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Class")]
-    public partial class Class
+    [Table("Location")]
+    public partial class Location
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Class()
+        public Location()
         {
             ClassCourses = new HashSet<ClassCourse>();
         }
 
         public int Id { get; set; }
 
-        [StringLength(50)]
+        [StringLength(100), Required]
         public string Name { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:C}"), Required, UIHint("Currency")]
-        public decimal Fee { get; set; }
+        [StringLength(200)]
+        public string Address { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ClassCourse> ClassCourses { get; set; }

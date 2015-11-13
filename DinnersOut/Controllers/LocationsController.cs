@@ -10,107 +10,107 @@ using DinnersOut.Models;
 
 namespace DinnersOut.Controllers
 {
-    public class ClassesController : Controller
+    public class LocationsController : Controller
     {
         private RepoSeedModel db = new RepoSeedModel();
 
-        // GET: Classes
+        // GET: Locations
         public ActionResult Index()
         {
-            return View(db.Classes.ToList());
+            return View(db.Locations.ToList());
         }
 
-        // GET: Classes/Details/5
+        // GET: Locations/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Class @class = db.Classes.Find(id);
-            if (@class == null)
+            Location location = db.Locations.Find(id);
+            if (location == null)
             {
                 return HttpNotFound();
             }
-            return View(@class);
+            return View(location);
         }
 
-        // GET: Classes/Create
+        // GET: Locations/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Classes/Create
+        // POST: Locations/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Fee")] Class @class)
+        public ActionResult Create([Bind(Include = "Id,Name,Address")] Location location)
         {
             if (ModelState.IsValid)
             {
-                db.Classes.Add(@class);
+                db.Locations.Add(location);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(@class);
+            return View(location);
         }
 
-        // GET: Classes/Edit/5
+        // GET: Locations/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Class @class = db.Classes.Find(id);
-            if (@class == null)
+            Location location = db.Locations.Find(id);
+            if (location == null)
             {
                 return HttpNotFound();
             }
-            return View(@class);
+            return View(location);
         }
 
-        // POST: Classes/Edit/5
+        // POST: Locations/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Fee")] Class @class)
+        public ActionResult Edit([Bind(Include = "Id,Name,Address")] Location location)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(@class).State = EntityState.Modified;
+                db.Entry(location).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(@class);
+            return View(location);
         }
 
-        // GET: Classes/Delete/5
+        // GET: Locations/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Class @class = db.Classes.Find(id);
-            if (@class == null)
+            Location location = db.Locations.Find(id);
+            if (location == null)
             {
                 return HttpNotFound();
             }
-            return View(@class);
+            return View(location);
         }
 
-        // POST: Classes/Delete/5
+        // POST: Locations/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Class @class = db.Classes.Find(id);
-            db.Classes.Remove(@class);
+            Location location = db.Locations.Find(id);
+            db.Locations.Remove(location);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
